@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int shour;
+    int sminute;
+    int ehour;
+    int eminute;
+    int serve;
+    float price;
+    int sall;
+    int eall;
+    int serviceD;
+
+    printf("enter the start hour (between 0 and 23) (-1 to terminate): ");
+    scanf("%d", &shour);
+
+    while (shour != -1) {
+        printf("enter the start minute (between 0 and 59): ");
+        scanf("%d", &sminute);
+
+        printf("enter the end hour (between 0 and 23): ");
+        scanf("%d", &ehour);
+
+        printf("enter the end minute (between 0 and 59): ");
+        scanf("%d", &eminute);
+
+        printf("enter the serve type: ");
+        scanf("%d", &serve);
+
+        sall = (shour * 60) + sminute;
+        eall = (ehour * 60) + eminute;
+
+        if (eall > sall) {
+            serviceD = sall - eall;
+        } else if (eall == sall) {
+            serviceD = 1440;
+        } else if (eall < sall) {
+            serviceD = ((24*60)- (sall - eall));
+        }
+
+
+        switch (serve) {
+            case 0:
+                price = serviceD * (21.0 / 2);
+                break;
+
+            case 1:
+                price = serviceD * 12.0;
+                break;
+
+            case 2:
+                price = serviceD * (63.0 / 4);
+                break;
+        }
+
+        printf("Service Duration is %d.\n", serviceD);
+        printf("Price : %.2f\n", price);
+
+        printf("enter the start hour (between 0 and 23) (-1 to terminate): ");
+        scanf("%d", &shour);
+    }
+
+    return 0;
+}
