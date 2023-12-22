@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int choice;
+    float a,b;
+    printf("hello sir welcome to the ultra mega deluxe calculator please select your  operation:\n");
+    printf("(1) Add\n");
+    printf("(2) Substract\n");
+    printf("(3) Multiplication\n");
+    printf("(4) Divide\n");
+    printf("(0) Exit(we'll miss you)\n");
+    printf("so whats your choice:");
+    scanf("%d", &choice);
+
+    while (choice != 0) {
+    while (1<= choice && choice <=4 && choice != 0) {
+       if (choice == 1 || choice == 2 || choice==3 || choice==4 ) {
+        printf("enter your first digit: ");
+        scanf("%f", &a);
+        printf("enter your second digit:");
+        scanf("%f", &b);
+    if (choice == 1)
+    printf("the result is %.4f\n", a + b);
+    else if (choice == 2)
+    printf("the result is %.4f\n", a - b);
+    else if (choice == 3)
+    printf("the result is %.4f\n", a * b);
+    else if (choice == 4) {
+     if (b == 0) {
+        printf("sir you cannot divide a number by a zero.");
+     }
+     else {
+        printf("the result is %.4f\n", a / b);
+      }
+     }
+
+    else if (choice < 0 || choice > 4); {
+        printf("please select your operation number on a list sir.");
+        scanf()
+      }
+     }
+     printf("\nplease enter your choice sir:");
+     scanf("%d", &choice);
+     }
+    }
+
+    printf("hello sir welcome to the ultra mega deluxe calculator please select your  operation:\n");
+    printf("(1) Add\n");
+    printf("(2) Substract\n");
+    printf("(3) Multiplication\n");
+    printf("(4) Divide\n");
+    printf("(0) Exit(we'll miss you)\n");
+    printf("so whats your choice:");
+    scanf("%d", &choice);
+    return 0;
+}
