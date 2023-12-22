@@ -1,0 +1,76 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int mon;
+    printf("please enter a number between 1 and 12");
+    scanf("%d", &mon);
+
+    while (mon = getchar()) {
+            switch (mon) {
+
+        case '1':
+        printf("the first month name is january");
+        break;
+
+        case '2':
+        printf("the second month name is february");
+        break;
+
+        case '3':
+        printf("the third month name is march");
+        break;
+
+        case '4':
+        printf("the fourth month name is april");
+        break;
+
+        case '5':
+        printf("the fifth month name is may");
+        break;
+
+        case '6':
+        printf("the sixth month name is june");
+        break;
+
+        case '7':
+        printf("the seventh month name is july");
+        break;
+
+        case '8':
+        printf("the eighth month name is august");
+        break;
+
+        case '9':
+        printf("the ninth month name is september");
+        break;
+
+        case '10':
+        printf("the tenth month name is october");
+        break;
+
+        case '11':
+        printf("the eleventh month name is november");
+        break;
+
+        case '12':
+        printf("the twelfth month name is december");
+        break;
+
+        case '\n':
+        case '  ':
+        case ' ':
+        break;
+
+        default:
+        printf("%s entered incorrect number!");
+        puts("please try again");
+        break;
+
+        }
+
+    }
+
+    return 0;
+}
