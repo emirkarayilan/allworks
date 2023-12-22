@@ -1,0 +1,114 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int opnum;
+float x;
+float sigmoidFunction(float x) {
+    return 1 / (1 + exp(-x));
+}
+
+float hyperbolicFunction(float x) {
+    return (exp(x) - exp(-x)) / (exp(x) + exp(-x));
+}
+
+float reLuFunction(float x) {
+    if(x < 0) {
+        return x * 0;
+    } else {
+        return x * 1;
+    }
+}
+
+float leakreLuFunction(float x) {
+    if(x < 0) {
+        return x * 1/100;
+    } else {
+        return x;
+    }
+}
+
+float eluFunction(float x) {
+    if (x <= 0) {
+       return exp(x) - 1;
+    } else {
+       return x;
+    }
+}
+
+float softFunction(float x) {
+    return log(1 + exp(x));
+}
+
+int main()
+{
+    printf("(1) Sigmoid (Logistic)\n");
+    printf("(2) Hyperbolic Tangent (Tanh)\n");
+    printf("(3) Rectified Linear Unit (ReLU)\n");
+    printf("(4) Leaky ReLU\n");
+    printf("(5) Exponential Linear Units (ELU)\n");
+    printf("(6) Softplus\n");
+    printf("Please enter your operation number(-1 to exit)\n");
+    scanf("%d", &opnum);
+    while (opnum != -1) {
+
+    float result;
+
+    switch(opnum) {
+        case 1:
+        printf("Enter your parameter:");
+        scanf("%f", &x);
+        result = sigmoidFunction(x);
+        printf("The result is %.2f\n", result);
+        break;
+
+        case 2:
+        printf("Enter your parameter:");
+        scanf("%f", &x);
+        result = hyperbolicFunction(x);
+        printf("The result is %.2f\n", result);
+        break;
+
+        case 3:
+        printf("Enter your parameter:");
+        scanf("%f", &x);
+        result = reLuFunction(x);
+        printf("The result is %.2f\n", result);
+        break;
+
+        case 4:
+        printf("Enter your parameter:");
+        scanf("%f", &x);
+        result = leakreLuFunction(x);
+        printf("The result is %.2f\n", result);
+        break;
+
+        case 5:
+        printf("Enter your parameter:");
+        scanf("%f", &x);
+        result = eluFunction(x);
+        printf("The result is %.2f\n", result);
+        break;
+
+        case 6:
+        printf("Enter your parameter:");
+        scanf("%f", &x);
+        result = softFunction(x);
+        printf("The result is %.2f\n", result);
+        break;
+
+        default:
+        printf("please enter a number on a list.\n");
+        break;
+    }
+    printf("(1) Sigmoid (Logistic)\n");
+    printf("(2) Hyperbolic Tangent (Tanh)\n");
+    printf("(3) Rectified Linear Unit (ReLU)\n");
+    printf("(4) Leaky ReLU\n");
+    printf("(5) Exponential Linear Units (ELU)\n");
+    printf("(6) Softplus\n");
+    printf("Please enter your operation number\n");
+    scanf("%d", &opnum);
+    }
+    return 0;
+}
